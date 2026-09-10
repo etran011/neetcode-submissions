@@ -1,0 +1,18 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        l = 0
+        r = len(s) - 1
+        palindrome = True
+        while l < r:
+            if not s[l].isalnum():
+                l += 1
+            elif not s[r].isalnum():
+                r -= 1
+            else:
+                if s[l].lower() != s[r].lower():
+                    palindrome = False
+                    return palindrome
+                else:
+                    l += 1
+                    r -= 1
+        return palindrome
